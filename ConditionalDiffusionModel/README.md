@@ -7,9 +7,10 @@
 </p>
 <br>
 사용법: <br>
+```python
 from image2image_diffusion import ConditionalDiffusion, AugmentConfig
 
-input_dir = ""
+input_dir = "./data/original_images"
 output_dir = input_dir
 
 augment_configs = [
@@ -28,6 +29,7 @@ saved_paths = augmentor.augment_directory(
     output_dir=output_dir,
     augment_configs=augment_configs,
     verbose=True,
- )
+)
 
 print(f"총 생성 파일 수: {len(saved_paths)}")
+```
