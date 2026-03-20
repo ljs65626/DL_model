@@ -13,6 +13,9 @@ from image2image_diffusion import ConditionalDiffusion, AugmentConfig
 input_dir = "./data/original_images"
 output_dir = input_dir
 
+# strength: 가우시안 노이즈를 얼마나 추가할 것인가?(0.0 ~ 1.0) -> 값이 낮을 수록 원본과 거의 비슷하게 나오고, 높을 수록 원본과 많이 다르게 나온다.
+# guidance_scale: 사용자가 입력한 프롬프트를 얼마나 엄격하게 따를 것인가? -> 값이 낮을 수록 프롬프트를 무시하고, 높을 수록 프롬프트를 엄격하게 따른다.
+# num_inference_steps: 가우시안 노이즈 제거 과정을 몇 번 반복할 것인가? -> 값이 낮을 수록 노이즈를 적게 제거하고, 높을 수록 노이즈를 많이 제거한다.
 augment_configs = [
     AugmentConfig("name1", strength=0.30, guidance_scale=7.0, num_inference_steps=32),
     AugmentConfig("name2", strength=0.38, guidance_scale=7.2, num_inference_steps=36),
